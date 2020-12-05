@@ -5,7 +5,7 @@ import random
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-H", "--host", "--ip", help="your IP")
+parser.add_argument("-H", "--host", help="your IP")
 parser.add_argument("-p", "--port", help="your PORT")
 parser.add_argument("-a", "--adapter", help="your adapter for auto IP")
 
@@ -17,7 +17,7 @@ else:
     ip = netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr']
 
 if args.host:
-    ip = host
+    ip = args.host
 
 if args.port:
     port = args.port
@@ -110,9 +110,9 @@ conf = f"LISTENER STARTED ON PORT: {port}"
 
 menu = """
    ----------------
-      Lazy Shell
+      Easy Shell
    ----------------
-   Author: 0xRoman1
+   Author: Binary
 
 
   ___________* Options *____________
